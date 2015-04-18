@@ -26,9 +26,17 @@ hist(castActivity$steps)
 ```{r}
 actMean <- format(round(mean(castActivity$steps), 2), nsmall = 2)
 actMedian <- median(castActivity$steps)
-actMean
-actMedian
+
 ```
+
+```{r}
+actMean
+[1] "10766.19"
+actMedian
+[1] 10765
+```
+###Mean is 10766.19 while median is 10765
+
 
 ##Average daily activity pattern
 
@@ -46,12 +54,24 @@ maxRow <- ADAcastInterval[ADAcastInterval$steps==max(ADAcastInterval$steps),]
 maxRow
 ```
 
+```{r}
+maxRow
+    interval    steps
+104      835 206.1698
+```
+###Interval at 835 with maximum step os 206.1698
+
 ##Inputing missing values
 
 #calculate & report total no. of missing values
 ```{r}
 sum(is.na(activity$steps))
 ```
+
+```{r}
+[1] 2304
+```
+###total missing values is 2304
 
 #plotting histogram
 ```{r}
@@ -77,6 +97,14 @@ MVMedian <- median(MVcastActivity$steps)
 MVMean
 MVMedian
 ```
+
+```{r}
+MVMean
+[1] "10765.64"
+MVMedian
+[1] 10762
+```
+### mean is 10765.64 while median is 10762.
 
 ##Difference in activity pattern Weekday VS weekends
 ```{r}
