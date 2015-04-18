@@ -7,7 +7,7 @@ output: html_document
 
 #uploading the dataset into R
 ```{r}
-activity <- read.csv(file="C:/Users/User/Documents/GitHub/Mod5-ReproducibleResearch/activity.csv")
+activity <- read.csv(file="C:/Users/User/Documents/GitHub/Mod5-ReproducibleResearch/Project1/activity.csv")
 ```
 
 #format date field
@@ -28,6 +28,9 @@ castActivity <- dcast(meltActivity, date ~ variable, sum)
 hist(castActivity$steps)
 ```
 
+```{r, echo=FALSE}
+hist(castActivity$steps)
+```
 
 #get mean and median
 ```{r}
@@ -46,6 +49,9 @@ ADAcastInterval <- dcast(ADAmeltInterval, interval ~ variable, mean)
 plot( ADAcastInterval$interval, ADAcastInterval$steps, type="l")
 ```
 
+```{r, echo=FALSE}
+plot( ADAcastInterval$interval, ADAcastInterval$steps, type="l")
+```
 
 #finding which interval has the maximum no. of steps and how much
 ```{r}
@@ -76,6 +82,9 @@ MVcastActivity <- dcast(MVmeltActivity, date ~ variable, sum)
 hist(MVcastActivity$steps)
 ```
 
+```{r, echo=FALSE}
+hist(MVcastActivity$steps)
+```
 
 #get mean and median
 ```{r}
@@ -101,4 +110,6 @@ diff <- ggplot(cast, aes(x=interval, y=steps)) + geom_line() + ylab("Number of S
 diff + facet_wrap(~ dayType, ncol=1)
 ```
 
-
+```{r, echo=FALSE}
+diff + facet_wrap(~ dayType, ncol=1)
+```

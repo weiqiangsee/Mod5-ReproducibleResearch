@@ -1,6 +1,6 @@
 #uploading the dataset into R
 ```{r}
-activity <- read.csv(file="C:/Users/User/Documents/GitHub/Mod5-ReproducibleResearch/activity.csv")
+activity <- read.csv(file="C:/Users/User/Documents/GitHub/Mod5-ReproducibleResearch/Project1/activity.csv")
 ```
 
 #format date field
